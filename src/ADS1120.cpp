@@ -57,13 +57,13 @@ void ADS1120::begin(uint8_t cs_pin, uint8_t drdy_pin) {
 
 void ADS1120::beginTransaction() {
   SPI.beginTransaction(mySPISettings);
-  digitalWrite(cs_pin_,LOW);   // Set CS to the device low
+  digitalWrite(cs_pin_,LOW);  // Set CS to the device low
   delayMicroseconds(1);       // Delay for a minimum of td(CSSC)
 }
 
 void ADS1120::endTransaction() {
   delayMicroseconds(1);       // Delay for a minimum of td(SCCS)
-  digitalWrite(cs_pin_,HIGH);  // Clear CS to high
+  digitalWrite(cs_pin_,HIGH); // Clear CS to high
   SPI.endTransaction();
 }
 
